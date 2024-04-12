@@ -1,13 +1,13 @@
 require("@nomicfoundation/hardhat-toolbox");
 require("hardhat-deploy");
 require("hardhat-docgen");
-
+require('dotenv').config()
 
 module.exports = {
     solidity: "0.8.20",
     networks: {
-        goerli: {
-            url: `https://goerli.infura.io/v3/${process.env.INFURA_API_KEY}`,
+        sepolia: {
+            url: `${process.env.SEPOLIA_RPC_URL}`,
             accounts: [
                 `${process.env.PRIVATE_KEY}`,
             ],
